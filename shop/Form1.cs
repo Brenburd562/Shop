@@ -22,6 +22,8 @@ namespace shop
 
         private void NewOrder_Click(object sender, EventArgs e)
         {
+            //resetting entire program 
+            //reset all vars
             elfo = 0;
             bean = 0;
             bottle = 0;
@@ -33,15 +35,18 @@ namespace shop
             subTotal = 0;
             tax = 0;
             taxTotal = 0;
+            givenZogs = 0;
+            //reset all input boxes
             amntBean.Text = String.Empty;
             amntBottle.Text = String.Empty;
             amntElfo.Text = String.Empty;
-            givenZogs = 0;
+            inputTender.Text = String.Empty;
+            //reset all cash outputs
             outputChange.Text = "0.00z";
             outputSub.Text = "0.00z";
             outputTax.Text = "0.00z";
             outputTotal.Text = "0.00z";
-            inputTender.Text = String.Empty;
+            //covering up receipt
             Graphics g = this.CreateGraphics();
             SolidBrush backBrush = new SolidBrush(Color.White);
             g.FillRectangle (backBrush, 500, 50, 1000, 1000);
@@ -52,11 +57,14 @@ namespace shop
         {
             try
             {
+                //clearing error if they fixed it
                 errorOutput.Text = String.Empty;
+                //declare receipt vars
                 Graphics g = this.CreateGraphics();
                 SolidBrush textBrush = new SolidBrush(Color.Black);
                 SolidBrush backBrush = new SolidBrush(Color.White);
                 Font drawFont = new Font("courier new", 12, FontStyle.Bold);
+                //drawing receipt
                 g.TranslateTransform(300, 50);
                 g.FillRectangle(textBrush, 250, 120, 745, 790);
                 g.FillRectangle(backBrush, 270, 140, 705, 750);
@@ -71,6 +79,7 @@ namespace shop
             }
             catch
             {
+                //error message
                 errorOutput.Text = "Fill in all the boxes with numbers\n or ill put you in the plague pit!";
             }
         }
@@ -80,6 +89,7 @@ namespace shop
         {
                 try
                 {
+                //caculating change
                     errorOutput.Text = String.Empty;
                     givenZogs = Convert.ToInt16(inputTender.Text);
                     changeZogs = givenZogs - taxTotal;
