@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace shop
 {
@@ -60,6 +61,9 @@ namespace shop
                 //clearing error if they fixed it
                 errorOutput.Text = String.Empty;
                 //declare receipt vars
+
+                SoundPlayer grunt = new SoundPlayer(Properties.Resources._546390_SOUNDDOGS__gr);
+                grunt.Play();
                 Graphics g = this.CreateGraphics();
                 SolidBrush textBrush = new SolidBrush(Color.Black);
                 SolidBrush backBrush = new SolidBrush(Color.White);
