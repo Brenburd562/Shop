@@ -60,10 +60,12 @@ namespace shop
             {
                 //clearing error if they fixed it
                 errorOutput.Text = String.Empty;
-                //declare receipt vars
 
+                //playing receipt sound
                 SoundPlayer grunt = new SoundPlayer(Properties.Resources._546390_SOUNDDOGS__gr);
                 grunt.Play();
+
+                //declare receipt vars
                 Graphics g = this.CreateGraphics();
                 SolidBrush textBrush = new SolidBrush(Color.Black);
                 SolidBrush backBrush = new SolidBrush(Color.White);
