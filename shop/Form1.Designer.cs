@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.receipt = new System.Windows.Forms.Button();
             this.cacTotal = new System.Windows.Forms.Button();
             this.cacChange = new System.Windows.Forms.Button();
@@ -320,8 +321,9 @@
             this.Controls.Add(this.cacTotal);
             this.Controls.Add(this.receipt);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Shop";
             this.ResumeLayout(false);
             this.PerformLayout();
 
