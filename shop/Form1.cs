@@ -17,7 +17,7 @@ namespace shop
     public partial class Form1 : Form
     {
         //all variables 
-        const int elfoCost = 1, beanCost = 9, bottleCost = 5;
+        const int ELFOCOST = 1, BEANCOST = 9, BOTTLECOST = 5;
         int elfo,  bean, bottle, elfoTotal, beanTotal, bottleTotal;
         double givenZogs, changeZogs, subTotal, taxTotal, tax;
 
@@ -37,16 +37,19 @@ namespace shop
             tax = 0;
             taxTotal = 0;
             givenZogs = 0;
+
             //reset all input boxes
             amntBean.Text = String.Empty;
             amntBottle.Text = String.Empty;
             amntElfo.Text = String.Empty;
             inputTender.Text = String.Empty;
+
             //reset all cash outputs
             outputChange.Text = "0.00z";
             outputSub.Text = "0.00z";
             outputTax.Text = "0.00z";
             outputTotal.Text = "0.00z";
+
             //covering up receipt
             Graphics g = this.CreateGraphics();
             SolidBrush backBrush = new SolidBrush(Color.White);
@@ -70,6 +73,7 @@ namespace shop
                 SolidBrush textBrush = new SolidBrush(Color.Black);
                 SolidBrush backBrush = new SolidBrush(Color.White);
                 Font drawFont = new Font("courier new", 12, FontStyle.Bold);
+
                 //drawing receipt
                 g.TranslateTransform(300, 50);
                 g.FillRectangle(textBrush, 250, 120, 745, 790);
@@ -115,17 +119,20 @@ namespace shop
             try
             {
                 errorOutput.Text = String.Empty;
+
                 //gather amount of each item
                 elfo = Convert.ToInt16(amntElfo.Text);
                 bean = Convert.ToInt16(amntBean.Text);
                 bottle = Convert.ToInt16(amntBottle.Text);
+
                 //caculating tax, subtotal, and total.
-                elfoTotal = elfo * elfoCost;
-                beanTotal = bean * beanCost;
-                bottleTotal = bottle * bottleCost;
+                elfoTotal = elfo * ELFOCOST;
+                beanTotal = bean * BEANCOST;
+                bottleTotal = bottle * BOTTLECOST ;
                 subTotal = elfoTotal + beanTotal + bottleTotal;
                 tax = subTotal * 0.13;
                 taxTotal = subTotal + tax;
+
                 //displaying tax, subtotal, and total. 
                 outputSub.Text = subTotal.ToString("0.00") + "z";
                 outputTotal.Text = taxTotal.ToString("0.00") + "z";
