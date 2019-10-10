@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Threading;
 
 namespace shop
 {
@@ -78,14 +79,25 @@ namespace shop
                 g.TranslateTransform(300, 50);
                 g.FillRectangle(textBrush, 250, 120, 745, 790);
                 g.FillRectangle(backBrush, 270, 140, 705, 750);
-                g.DrawString(" Little Seizures Poison Shop\n\n\n" +
-                    "Hi Im elfos    x" + elfo + "       " + elfoTotal.ToString("0.00") + "z\nBottle Breaker x" +
-                    bottle + "       " + bottleTotal.ToString("0.00") + "z" + "\nBean Specials  x" + bean + "       "
-                    + beanTotal.ToString("0.00") + "z\n\nSub Total              " + subTotal.ToString("0.00") + "z\nTax                     "
-                    + tax.ToString("0.00") + "z\nTotal                  " + taxTotal.ToString("0.00") + "z\n\nZogs Given" +
-                    "             " + givenZogs.ToString("0.00") + "z\nZogs returned           " + changeZogs.ToString("0.00") + "z\n\n\n" +
-                    " See You In The Plague Pit!"
-                    , drawFont, textBrush, 300, 200);
+                g.DrawString(" Little Seizures Poison Shop", drawFont, textBrush, 300, 200);
+                Thread.Sleep(500);
+                g.DrawString("\n\n\nHi Im elfos    x" + elfo + "       " + elfoTotal.ToString("0.00") + "z", drawFont, textBrush, 300, 200);
+                Thread.Sleep(500);
+                g.DrawString("\n\n\n\nBottle Breaker x" + bottle + "       " + bottleTotal.ToString("0.00") + "z", drawFont, textBrush, 300, 200);
+                Thread.Sleep(500);
+                g.DrawString("\n\n\n\n\nBean Specials  x" + bean + "       " + beanTotal.ToString("0.00") + "z", drawFont, textBrush, 300, 200);
+                Thread.Sleep(500);
+                g.DrawString("\n\n\n\n\n\n\nSub Total              " + subTotal.ToString("0.00") + "z", drawFont, textBrush, 300, 200);
+                Thread.Sleep(500);
+                g.DrawString("\n\n\n\n\n\n\n\nTax                     " + tax.ToString("0.00") + "z", drawFont, textBrush, 300, 200);
+                Thread.Sleep(500);
+                g.DrawString("\n\n\n\n\n\n\n\n\nTotal                  " + taxTotal.ToString("0.00") + "z", drawFont, textBrush, 300, 200);
+                Thread.Sleep(500);
+                g.DrawString("\n\n\n\n\n\n\n\n\n\nZogs Given" + "             " + givenZogs.ToString("0.00") + "z", drawFont, textBrush, 300, 200);
+                Thread.Sleep(500);
+                g.DrawString("\n\n\n\n\n\n\n\n\n\n\nZogs returned           " + changeZogs.ToString("0.00") + "z", drawFont, textBrush, 300, 200);
+                Thread.Sleep(500);
+                g.DrawString("\n\n\n\n\n\n\n\n\n\n\n\n\n See You In The Plague Pit!", drawFont, textBrush, 300, 200);
             }
             catch
             {
